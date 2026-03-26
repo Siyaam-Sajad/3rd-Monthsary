@@ -7,7 +7,9 @@ body {
     color: #fff;
     overflow-x: hidden; /* only hide sideways scroll */
 }
-
+body {
+    overflow-y: auto;
+}
 .container {
     margin-top: 60px;
     position: relative;
