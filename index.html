@@ -1,0 +1,85 @@
+<!-- HTML PART -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3rd Monthsary ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" autoplay loop>
+        <source src="music.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- Floating Hearts -->
+    <div class="hearts"></div>
+
+    <div class="container">
+        <h1>Happy 3rd Monthsary ❤️</h1>
+        <h2>HAYUUU BABYYY ❤️ I LOVE YOU </h2>
+
+        <p class="message">
+            These 3 months with you have been the happiest time of my life 💖
+        </p>
+
+        <!-- Countdown -->
+        <p id="countdown"></p>
+
+        <div class="gallery">
+            <img src="img1.jpg" alt="memory">
+            <img src="img2.jpg" alt="memory">
+            <img src="img3.jpg" alt="memory">
+        </div>
+
+        <button onclick="showLove()">Click for a surprise 💌</button>
+
+        <p id="hiddenText" class="hidden">
+            I love you more than words can ever explain 💞 
+            Mei humesha aapke saath rahunga in your ups and 
+            downs and forever and I will always support you baby.
+            And again promising that I will marry you insha allah ameen.
+        </p>
+    </div>
+
+    <script>
+        function showLove() {
+            document.getElementById("hiddenText").style.display = "block";
+        }
+
+        // Countdown since 27 Dec 2025
+        const startDate = new Date("December 27, 2025 00:00:00").getTime();
+
+        setInterval(() => {
+            const now = new Date().getTime();
+            const diff = now - startDate;
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+
+            document.getElementById("countdown").innerHTML =
+                `Together for ${days} days, ${hours} hours, ${minutes} minutes ❤️`;
+        }, 1000);
+
+        // Floating hearts generator
+        const heartsContainer = document.querySelector('.hearts');
+        setInterval(() => {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            heartsContainer.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }, 300);
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Pacifico&display=swap" rel="stylesheet">
+</body>
+</html>
+
+
